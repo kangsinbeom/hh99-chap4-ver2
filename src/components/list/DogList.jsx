@@ -11,7 +11,6 @@ const DogList = () => {
   if (isError) {
     return <p>Error :</p>;
   }
-  console.log(data);
   return (
     <StyledList>
       {data.map((dog, index) => (

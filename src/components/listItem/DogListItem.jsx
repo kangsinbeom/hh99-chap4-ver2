@@ -1,7 +1,6 @@
 import { StyledListItem } from "./dogListItemStyle";
 
 const DogListItem = ({ index, dog, url, dogInfo }) => {
-  console.log(dogInfo);
   const { name, life_span } = dogInfo;
 
   return (
