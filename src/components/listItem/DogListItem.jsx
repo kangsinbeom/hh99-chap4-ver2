@@ -1,7 +1,13 @@
 import { StyledListItem } from "./dogListItemStyle";
-
+import { toggleModal } from "../../redux/modules/modal";
+import { useDispatch } from "react-redux";
 const DogListItem = ({ index, dog, url, dogInfo }) => {
   const { name, life_span } = dogInfo;
+  const dispatch = useDispatch();
+  const onModalCheckedHandler = () => {
+    dispatch(toggleModal());
+    console.log("눌리는 중");
+  };
 
   return (
     <StyledListItem url={url}>
@@ -10,7 +16,7 @@ const DogListItem = ({ index, dog, url, dogInfo }) => {
         <p>{name}</p>
         <p>{life_span}</p>
       </div>
-      <div className="imgCircle"></div>
+      <div className="imgCircle" onDoubleClick={onModalCheckedHandler}></div>
     </StyledListItem>
   );
 };
